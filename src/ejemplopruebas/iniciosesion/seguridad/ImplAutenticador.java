@@ -7,7 +7,10 @@ public class ImplAutenticador implements Autenticador {
 
     @Override
     public Usuario autenticar(String usuario, String contraseña) {
-        System.out.println(usuario + ".." + contraseña);
+        // TODO: En realidad, esto debería comunicarse con la base de datos
+        // o el mecanismo de persistencia para realizar la autenticación de
+        // usuarios. Por ahora, el usuario y la contraseña válida están
+        // harcoded.
         if (usuario.equals("javier") && contraseña.equals("123")) {
             return new Usuario(usuario);
         } else {
