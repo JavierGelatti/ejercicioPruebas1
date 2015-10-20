@@ -3,25 +3,20 @@ package ejemplopruebas.calculadora;
 public class Calculadora {
 
     public int multiplicar(int a, int b) {
-        boolean posA = a >= 0;
-        boolean posB = b >= 0;
-        boolean negP = posA != posB;
+        boolean aPositivo = a >= 0;
+        boolean bPositivo = b >= 0;
 
-        a = posA ? a : -a;
-        b = posB ? b : -b;
+        boolean pNegativo = aPositivo != bPositivo;
 
-        int p1 = 0;
+        a = aPositivo ? a : -a;
+        b = bPositivo ? b : -b;
+
+        int p = 0;
         while (a-- > 0) {
-            p1 = sumar(p1, b);
+            p += b;
         }
 
-        int p = p1;
-
-        return negP ? -p : p;
-    }
-
-    private int sumar(int a, int b) {
-        return a + b;
+        return pNegativo ? -p : p;
     }
 
 }
